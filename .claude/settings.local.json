@@ -16,7 +16,8 @@
       "Bash(docker system:*)",
       "Bash(docker pull:*)",
       "Bash(curl:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": []
   }
