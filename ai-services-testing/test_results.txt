@@ -1,0 +1,53 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-8.3.5, pluggy-1.5.0 -- /home/rhox/lama_test/whisper-env/bin/python
+cachedir: .pytest_cache
+rootdir: /home/rhox/lama_test/ai-services-testing
+configfile: pytest.ini
+testpaths: tests
+plugins: requests-mock-1.12.1
+collecting ... collected 36 items
+
+tests/test_integration.py::TestIntegration::test_audio_to_structured_summary_mock PASSED [  2%]
+tests/test_integration.py::TestIntegration::test_end_to_end_performance_mock PASSED [  5%]
+tests/test_integration.py::TestIntegration::test_whisper_service_real_audio PASSED [  8%]
+tests/test_integration.py::TestIntegration::test_ollama_service_health_mock PASSED [ 11%]
+tests/test_integration.py::TestIntegration::test_multiple_transcriptions_performance PASSED [ 13%]
+tests/test_integration.py::TestIntegration::test_error_handling_integration PASSED [ 16%]
+tests/test_integration.py::TestIntegration::test_service_isolation PASSED [ 19%]
+tests/test_integration.py::TestIntegration::test_memory_usage_monitoring PASSED [ 22%]
+tests/test_ollama.py::TestOllamaService::test_ollama_service_init PASSED [ 25%]
+tests/test_ollama.py::TestOllamaService::test_health_check_success PASSED [ 27%]
+tests/test_ollama.py::TestOllamaService::test_health_check_failure PASSED [ 30%]
+tests/test_ollama.py::TestOllamaService::test_health_check_timeout PASSED [ 33%]
+tests/test_ollama.py::TestOllamaService::test_structured_output_success PASSED [ 36%]
+tests/test_ollama.py::TestOllamaService::test_structured_output_invalid_json PASSED [ 38%]
+tests/test_ollama.py::TestOllamaService::test_function_calling_success PASSED [ 41%]
+tests/test_ollama.py::TestOllamaService::test_simple_generate_success PASSED [ 44%]
+tests/test_ollama.py::TestOllamaService::test_list_models_success PASSED [ 47%]
+tests/test_ollama.py::TestOllamaService::test_list_models_empty PASSED   [ 50%]
+tests/test_ollama.py::TestOllamaService::test_list_models_error PASSED   [ 52%]
+tests/test_ollama.py::TestOllamaService::test_structured_output_validation_errors[{"location": "Paris", "temperature":}] PASSED [ 55%]
+tests/test_ollama.py::TestOllamaService::test_structured_output_validation_errors[{"location": "Paris"}] PASSED [ 58%]
+tests/test_ollama.py::TestOllamaService::test_structured_output_validation_errors[Not JSON at all] PASSED [ 61%]
+tests/test_ollama.py::TestOllamaService::test_request_timeout_handling PASSED [ 63%]
+tests/test_ollama.py::TestOllamaService::test_connection_error_handling PASSED [ 66%]
+tests/test_whisper.py::TestWhisperService::test_whisper_service_init PASSED [ 69%]
+tests/test_whisper.py::TestWhisperService::test_model_loading PASSED     [ 72%]
+tests/test_whisper.py::TestWhisperService::test_transcribe_success PASSED [ 75%]
+tests/test_whisper.py::TestWhisperService::test_transcribe_empty_audio PASSED [ 77%]
+tests/test_whisper.py::TestWhisperService::test_transcribe_multilingual PASSED [ 80%]
+tests/test_whisper.py::TestWhisperService::test_transcribe_error_handling PASSED [ 83%]
+tests/test_whisper.py::TestWhisperService::test_language_detection_accuracy[en-0.95] PASSED [ 86%]
+tests/test_whisper.py::TestWhisperService::test_language_detection_accuracy[es-0.87] PASSED [ 88%]
+tests/test_whisper.py::TestWhisperService::test_language_detection_accuracy[fr-0.82] PASSED [ 91%]
+tests/test_whisper.py::TestWhisperService::test_language_detection_accuracy[de-0.79] PASSED [ 94%]
+tests/test_whisper.py::TestWhisperService::test_get_available_models PASSED [ 97%]
+tests/test_whisper.py::TestWhisperService::test_model_caching PASSED     [100%]
+
+=============================== warnings summary ===============================
+../whisper-env/lib/python3.8/site-packages/whisper/timing.py:58
+  /home/rhox/lama_test/whisper-env/lib/python3.8/site-packages/whisper/timing.py:58: NumbaDeprecationWarning: The 'nopython' keyword argument was not supplied to the 'numba.jit' decorator. The implicit default value for this argument is currently False, but it will be changed to True in Numba 0.59.0. See https://numba.readthedocs.io/en/stable/reference/deprecation.html#deprecation-of-object-mode-fall-back-behaviour-when-using-jit for details.
+    def backtrace(trace: np.ndarray):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 36 passed, 1 warning in 10.91s ========================

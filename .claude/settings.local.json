@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker run:*)",
+      "Bash(docker compose:*)",
+      "Bash(docker-compose:*)",
+      "Bash(python3:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(chmod:*)",
+      "Bash(timeout 300 docker run -d --name ollama-test -p 11434:11434 -v ollama-data:/root/.ollama ollama/ollama:latest)",
+      "Bash(mkdir:*)",
+      "Bash(timeout 60 docker run --rm ollama/ollama:latest ollama --version)",
+      "Bash(ls:*)",
+      "Bash(docker system:*)",
+      "Bash(docker pull:*)",
+      "Bash(curl:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}
