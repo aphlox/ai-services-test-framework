@@ -7,14 +7,23 @@ services:
     ports:
       - "11434:11434"
     volumes:
-      - ollama-data:/root/.ollama
-      - ./entrypoint.sh:/entrypoint.sh:ro
+      - ollama-models-cache:/root/.ollama
+      - ./entrypoint-simple.sh:/entrypoint.sh:ro
+      - ./ollama_models:/shared:rw
     environment:
       - OLLAMA_KEEP_ALIVE=5m
       - OLLAMA_HOST=0.0.0.0
       - OLLAMA_ORIGINS=*
-      - OLLAMA_NUM_PARALLEL=2
+      - OLLAMA_NUM_PARALLEL=1
       - OLLAMA_MAX_LOADED_MODELS=1
+      - OLLAMA_DOWNLOAD_TIMEOUT=7200
+      - OLLAMA_RETRY_DELAY=30
+      - OLLAMA_MAX_RETRIES=100
+      - HTTP_TIMEOUT=7200
+      - DOWNLOAD_CHUNK_SIZE=1024
+      - OLLAMA_MAX_QUEUE=1
+      - OLLAMA_DOWNLOAD_RETRIES=50
+      - OLLAMA_CONCURRENT_REQUESTS=1
     entrypoint: ["/entrypoint.sh"]
     restart: unless-stopped
     deploy:
@@ -25,17 +34,21 @@ services:
         reservations:
           memory: 4G
           cpus: '2'
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434/api/version"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 60s
+      disable: true
 
 volumes:
-  ollama-data:
+  ollama-models-cache:
     driver: local
 
 networks:
   default:
     driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.enable_ip_masquerade: "true"
+      com.docker.network.driver.mtu: "1500"
