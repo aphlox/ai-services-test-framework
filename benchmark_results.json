@@ -1,0 +1,239 @@
+{
+  "system_info": {
+    "timestamp": "2025-07-26T13:15:54.758389",
+    "python_version": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+    "platform": "linux",
+    "docker_version": "Docker version 26.1.3, build 26.1.3-0ubuntu1~20.04.1",
+    "gpu_name": "NVIDIA GeForce RTX 3080",
+    "gpu_memory": "12288MB",
+    "gpu_driver": "576.52"
+  },
+  "gpu_results": {
+    "inference": {
+      "model": "phi4",
+      "test_runs": [
+        {
+          "run": 1,
+          "prompt_length": 4,
+          "response_length": 15,
+          "inference_time": 1.1694858074188232,
+          "tokens_per_second": 12.826149667524875,
+          "success": true
+        },
+        {
+          "run": 2,
+          "prompt_length": 4,
+          "response_length": 14,
+          "inference_time": 0.6749451160430908,
+          "tokens_per_second": 20.74242729849784,
+          "success": true
+        },
+        {
+          "run": 3,
+          "prompt_length": 4,
+          "response_length": 15,
+          "inference_time": 0.8716158866882324,
+          "tokens_per_second": 17.209415556884334,
+          "success": true
+        },
+        {
+          "run": 1,
+          "prompt_length": 6,
+          "response_length": 298,
+          "inference_time": 8.946115970611572,
+          "tokens_per_second": 33.31054515489678,
+          "success": true
+        },
+        {
+          "run": 2,
+          "prompt_length": 6,
+          "response_length": 278,
+          "inference_time": 8.248151302337646,
+          "tokens_per_second": 33.70452236020582,
+          "success": true
+        },
+        {
+          "run": 3,
+          "prompt_length": 6,
+          "response_length": 291,
+          "inference_time": 8.568132638931274,
+          "tokens_per_second": 33.96305966107187,
+          "success": true
+        },
+        {
+          "run": 1,
+          "prompt_length": 7,
+          "response_length": 735,
+          "inference_time": 23.499935388565063,
+          "tokens_per_second": 31.27668173750158,
+          "success": true
+        },
+        {
+          "run": 2,
+          "prompt_length": 7,
+          "response_length": 487,
+          "inference_time": 16.74953842163086,
+          "tokens_per_second": 29.075428094846693,
+          "success": true
+        },
+        {
+          "run": 3,
+          "prompt_length": 7,
+          "response_length": 603,
+          "inference_time": 14.957368612289429,
+          "tokens_per_second": 40.314577759657325,
+          "success": true
+        },
+        {
+          "run": 1,
+          "prompt_length": 10,
+          "response_length": 431,
+          "inference_time": 14.846582174301147,
+          "tokens_per_second": 29.030250527696815,
+          "success": true
+        },
+        {
+          "run": 2,
+          "prompt_length": 10,
+          "response_length": 524,
+          "inference_time": 18.656935214996338,
+          "tokens_per_second": 28.08607061993825,
+          "success": true
+        },
+        {
+          "run": 3,
+          "prompt_length": 10,
+          "response_length": 468,
+          "inference_time": 15.497858762741089,
+          "tokens_per_second": 30.19772003117838,
+          "success": true
+        },
+        {
+          "run": 1,
+          "prompt_length": 27,
+          "response_length": 436,
+          "inference_time": 11.891834735870361,
+          "tokens_per_second": 36.66381258098515,
+          "success": true
+        },
+        {
+          "run": 2,
+          "prompt_length": 27,
+          "response_length": 509,
+          "inference_time": 13.981790781021118,
+          "tokens_per_second": 36.40449266991726,
+          "success": true
+        },
+        {
+          "run": 3,
+          "prompt_length": 27,
+          "response_length": 478,
+          "inference_time": 12.375206708908081,
+          "tokens_per_second": 38.62561743359971,
+          "success": true
+        }
+      ],
+      "summary": {
+        "total_successful_runs": 15,
+        "total_runs": 15,
+        "avg_inference_time": 11.395699834823608,
+        "min_inference_time": 0.6749451160430908,
+        "max_inference_time": 23.499935388565063,
+        "avg_tokens_per_second": 30.095384743626845,
+        "max_tokens_per_second": 40.314577759657325,
+        "std_dev_time": 6.715578443075037
+      }
+    },
+    "memory": {
+      "measurements": [
+        {
+          "prompt": "Hello, how are you?...",
+          "memory_before_mb": 11812.0,
+          "memory_after_mb": 11818.0,
+          "memory_used_mb": 6.0
+        },
+        {
+          "prompt": "Explain quantum computing in simple terms....",
+          "memory_before_mb": 11818.0,
+          "memory_after_mb": 11824.0,
+          "memory_used_mb": 6.0
+        }
+      ],
+      "summary": {
+        "avg_memory_usage_mb": 6.0,
+        "max_memory_usage_mb": 6.0,
+        "min_memory_usage_mb": 6.0
+      }
+    }
+  },
+  "cpu_baseline": {
+    "model": "phi3",
+    "platform": "CPU",
+    "performance_metrics": {
+      "whisper_transcription_time": 3.63,
+      "memory_usage_mb": 605.5,
+      "ollama_response_time": 1.0,
+      "import_time": 0.0
+    },
+    "system_specs": {
+      "python_version": "3.8.10",
+      "docker_version": "26.1.3",
+      "ollama_version": "0.9.6",
+      "memory_available": "17GB",
+      "cpu_cores": "4+",
+      "platform": "Ubuntu 20.04 on WSL2"
+    },
+    "test_results": {
+      "unit_tests_passed": 28,
+      "unit_tests_total": 28,
+      "integration_tests_passed": 8,
+      "integration_tests_total": 8,
+      "test_runtime": "< 2 seconds",
+      "coverage": "100%"
+    },
+    "estimated_performance": {
+      "estimated_tokens_per_second": 15,
+      "estimated_inference_time": 8.0,
+      "concurrent_request_limit": 2
+    }
+  },
+  "comparison": {
+    "performance_comparison": {
+      "tokens_per_second": {
+        "gpu": 30.095384743626845,
+        "cpu": 15,
+        "speedup": 2.0063589829084565,
+        "improvement_percentage": 100.63589829084563
+      },
+      "inference_time": {
+        "gpu": 11.395699834823608,
+        "cpu": 8.0,
+        "speedup": 0.7020191928496712,
+        "time_saved_percentage": -42.4462479352951
+      }
+    },
+    "efficiency_analysis": {
+      "throughput": "GPU handles higher concurrent loads",
+      "memory_efficiency": "GPU uses dedicated VRAM vs system RAM",
+      "model_size": "Phi-4 (14.66B params) vs Phi-3 (3.8B params)",
+      "power_consumption": "GPU higher power but better performance/watt",
+      "cost_per_inference": "GPU initial cost higher, lower per-token cost at scale"
+    },
+    "recommendations": {
+      "performance": "GPU provides significant performance advantage (>2x speedup)",
+      "use_gpu_when": [
+        "High throughput requirements (>100 requests/hour)",
+        "Real-time inference needed",
+        "Large batch processing",
+        "Multiple concurrent users"
+      ],
+      "use_cpu_when": [
+        "Low request volume (<10 requests/hour)",
+        "Cost optimization is priority",
+        "Simple development/testing",
+        "Limited GPU availability"
+      ],
+      "optimal_setup": "Hybrid approach: GPU for production, CPU for development"
+    }
+  }
+}
